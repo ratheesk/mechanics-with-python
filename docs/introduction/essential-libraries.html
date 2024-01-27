@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Essential Python Libraries &#8212; Mechanics with Python  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../static/custom.css?v=fd0c8c12" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../static/doctools.js?v=888ff710"></script>
+    <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../static/copybutton.js?v=f281be69"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction/essential-libraries';</script>
+    <script src="../static/require.min.js?v=69d28c4f"></script>
+    <script src="../static/plotly.js?v=4108aa11"></script>
+    <link rel="icon" href="../static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotly for Mechanics" href="../tutorials/plotly/0-introduction.html" />
+    <link rel="prev" title="Setting Up Your Python Environment" href="settingup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../static/logo.png" class="logo__image only-light" alt="Mechanics with Python - Home"/>
+    <script>document.write(`<img src="../static/logo.png" class="logo__image only-dark" alt="Mechanics with Python - Home"/>`);</script>
+  
+  
+    <p class="title logo__title">Mechanics + Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Mechanics with Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="settingup.html">Setting Up Your Python Environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Essential Python Libraries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Plotly Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/0-introduction.html">Plotly for Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/1-particle-in-3d-space.html">A Particle in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/2-line-in-3d-space.html">A Line in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/3-animation-in-3d-space.html">Animate a Particle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/4-customized-functions-in-plotly.html">Customized Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/5-orthonormal-frame.html">Orthonormal Frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/6-point-in-e-frame.html">A Point in e Frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/7-description-of-motion.html">Description of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/8-parallel-frames.html">Parallel Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/9-straight-line-motion.html">Straight Line Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/10-constant-acceleration-motion.html">Constant Acceleration Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/plotly/11-circular-motion.html">Circular Motion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dynamic Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/systems/1-simple-pendulum.html">Simple Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/systems/2-simple-mass-spring.html">Coupled Spring Mass System</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ratheesk/mechanics-with-python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ratheesk/mechanics-with-python/blob/main/docs/introduction/essential-libraries.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ratheesk/mechanics-with-python/issues/new?title=Issue%20on%20page%20%2Fintroduction/essential-libraries.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../sources/introduction/essential-libraries.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Essential Python Libraries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-your-mathematical-toolkit">NumPy: Your Mathematical Toolkit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly-making-graphs-fun-and-interactive">Plotly: Making Graphs Fun and Interactive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-the-science-lab">SciPy: The Science Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-the-symbolic-explorer">SymPy: The Symbolic Explorer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-libraries">Installing the Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example-codes">Simple Example Codes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-links">Documentation Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-libraries">Alternative Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-thoughts">Final Thoughts</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="essential-python-libraries">
+<h1>Essential Python Libraries<a class="headerlink" href="#essential-python-libraries" title="Link to this heading">#</a></h1>
+<p>Welcome to our journey through the exciting world of mechanics simulations using Python! We’ll be using some fantastic tools, or “libraries”, that make our journey easier and more fun. Let’s take a look at these libraries and understand why they are so helpful.</p>
+<section id="numpy-your-mathematical-toolkit">
+<h2>NumPy: Your Mathematical Toolkit<a class="headerlink" href="#numpy-your-mathematical-toolkit" title="Link to this heading">#</a></h2>
+<p><strong>NumPy</strong> is like a Swiss Army knife for mathematical calculations in Python. Think of it as a super-powered calculator that helps you handle lists of numbers (like scores in a game or points in space) much more easily and quickly.</p>
+<ul class="simple">
+<li><p><strong>Why NumPy?</strong> It’s super fast and can handle really big lists of numbers, which is exactly what we need when simulating mechanical systems.</p></li>
+</ul>
+</section>
+<section id="plotly-making-graphs-fun-and-interactive">
+<h2>Plotly: Making Graphs Fun and Interactive<a class="headerlink" href="#plotly-making-graphs-fun-and-interactive" title="Link to this heading">#</a></h2>
+<p><strong>Plotly</strong> is like an artist for your data. It helps you draw colorful, interactive graphs that you can play with. Imagine being able to zoom in, rotate, or hover over your graph to see more details – that’s Plotly!</p>
+<ul class="simple">
+<li><p><strong>Why Plotly?</strong> It makes understanding complex data more fun and easier, especially when you have a lot to look at and want to make sense of it quickly.</p></li>
+</ul>
+</section>
+<section id="scipy-the-science-lab">
+<h2>SciPy: The Science Lab<a class="headerlink" href="#scipy-the-science-lab" title="Link to this heading">#</a></h2>
+<p><strong>SciPy</strong> builds on NumPy and is like having a science lab in your computer. It has tools for solving math puzzles, like how things move and change over time, which is perfect for understanding the laws of mechanics.</p>
+<ul class="simple">
+<li><p><strong>Why SciPy?</strong> It’s packed with tools for doing complex calculations that help us predict and understand how things in our mechanical world behave.</p></li>
+</ul>
+</section>
+<section id="sympy-the-symbolic-explorer">
+<h2>SymPy: The Symbolic Explorer<a class="headerlink" href="#sympy-the-symbolic-explorer" title="Link to this heading">#</a></h2>
+<p><strong>SymPy</strong> lets you play with symbols and equations just like in algebra class. Instead of numbers, you deal with symbols (like x, y, z) to figure out formulas and solve equations, which is really handy in physics and engineering.</p>
+<ul class="simple">
+<li><p><strong>Why SymPy?</strong> It’s great for working out complex theories and formulas before we even start using numbers, saving us time and effort in our simulations.</p></li>
+</ul>
+</section>
+<section id="installing-the-libraries">
+<h2>Installing the Libraries<a class="headerlink" href="#installing-the-libraries" title="Link to this heading">#</a></h2>
+<p>Before diving into the fun part, you need to install these libraries. Thankfully, with Python, installing libraries is a breeze using pip, Python’s package installer.</p>
+<p>Open your command line (Command Prompt on Windows, Terminal on macOS and Linux) and type the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+pip<span class="w"> </span>install<span class="w"> </span>plotly
+pip<span class="w"> </span>install<span class="w"> </span>scipy
+pip<span class="w"> </span>install<span class="w"> </span>sympy
+</pre></div>
+</div>
+<p>This will download and install each library on your computer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Google Colab, you don’t need to manually install these libraries. Google Colab comes with most common Python libraries, including NumPy, Plotly, SciPy, and SymPy, pre-installed. You can directly start using them in your notebooks without any installation steps.</p>
+</div>
+</section>
+<section id="simple-example-codes">
+<h2>Simple Example Codes<a class="headerlink" href="#simple-example-codes" title="Link to this heading">#</a></h2>
+<p>Let’s see some of these libraries in action with simple example codes.</p>
+<ol class="arabic simple">
+<li><p><strong>NumPy Example</strong>: Creating and printing a simple array.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Plotly Example</strong>: A basic line chart.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will open an interactive line chart in your notebook.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>SciPy Example</strong>: Solving a simple linear algebra problem.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[-4.   4.5]
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>SymPy Example</strong>: Solving an algebraic equation.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expected Output</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[3]
+</pre></div>
+</div>
+</section>
+<section id="documentation-links">
+<h2>Documentation Links<a class="headerlink" href="#documentation-links" title="Link to this heading">#</a></h2>
+<p>To help you get the most out of these libraries, here are links to their official documentation. These are great resources for learning and troubleshooting:</p>
+<ul class="simple">
+<li><p>NumPy: <a class="reference external" href="https://numpy.org/doc/stable/">NumPy Documentation</a></p></li>
+<li><p>Plotly: <a class="reference external" href="https://plotly.com/python/">Plotly Python Graphing Library</a></p></li>
+<li><p>SciPy: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy Documentation</a></p></li>
+<li><p>SymPy: <a class="reference external" href="https://docs.sympy.org/latest/index.html">SymPy Documentation</a></p></li>
+</ul>
+</section>
+<section id="alternative-libraries">
+<h2>Alternative Libraries<a class="headerlink" href="#alternative-libraries" title="Link to this heading">#</a></h2>
+<p>While we focus on these libraries, there are others too:</p>
+<ul class="simple">
+<li><p><strong>Matplotlib</strong>: It’s like Plotly but simpler, great for making static charts and diagrams.</p></li>
+<li><p><strong>Pandas</strong>: Think of it as a super-organized spreadsheet, fantastic for sorting and analyzing data.</p></li>
+</ul>
+</section>
+<section id="final-thoughts">
+<h2>Final Thoughts<a class="headerlink" href="#final-thoughts" title="Link to this heading">#</a></h2>
+<p>Using these libraries is like having a superpower in coding for mechanics. They make complicated tasks simpler and help us understand and simulate the physical world in amazing ways. So, let’s get started and have some fun with Python coding!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="settingup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setting Up Your Python Environment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorials/plotly/0-introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plotly for Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-your-mathematical-toolkit">NumPy: Your Mathematical Toolkit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly-making-graphs-fun-and-interactive">Plotly: Making Graphs Fun and Interactive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-the-science-lab">SciPy: The Science Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-the-symbolic-explorer">SymPy: The Symbolic Explorer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-libraries">Installing the Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example-codes">Simple Example Codes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-links">Documentation Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-libraries">Alternative Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-thoughts">Final Thoughts</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rathees
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Rathees.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
