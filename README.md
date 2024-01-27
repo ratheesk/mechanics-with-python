@@ -2,7 +2,7 @@
 
 ## About
 
-Welcome to mechanics-with-python, a repository from my personal notes to simulate theoretical concepts of ME211 (Mechanics of Machines) and their practical application using Python libraries.
+Welcome to mechanics-with-python, some tutorials from my personal notes to simulate theoretical concepts of ME211 (Mechanics of Machines) and their practical application using Python libraries.
 
 Go to the [Tutirial Page](https://ratheesk.github.io/mechanics-with-python/)
 
